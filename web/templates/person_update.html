@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>Person Update</h1>
+    <p>Change the First and Last Name:   </p>
+        <br>
+            <form action="/update_confirmation" method="post">
+                <input type="hidden" id="op" name="op" value="I">
+                <input type="hidden" id="pid" name="id_person" value={{ pid }}>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup_name">First name</span>
+                    <input type="text" class="form-control" name="first_name" aria-label="Sizing example input" aria-describedby="inputGroup_name">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup_lastName">Last Name</span>
+                    <input type="text" class="form-control" name="last_name" aria-label="Sizing example input" aria-describedby="inputGroup_lastName">
+                </div>
+                <br >
+                <input class="btn btn-primary" type="submit" name="form" value="Submit" />
+            </form>
+</div>
+
+{% endblock %}
