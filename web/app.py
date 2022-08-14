@@ -56,7 +56,9 @@ def person_delete(pid):
     for p in model:
         if p.id_person == pid:
             model.remove(p)
-    return render_template('person_delete.html')
+            return render_template('person_delete.html', name=p.name)
+        else:
+            return render_template('person_doesnot_exist.html')
 
 
 @app.route('/people')
